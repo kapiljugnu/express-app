@@ -1,5 +1,5 @@
 # Express App
-Express app contain 3 endpoints 
+Express app contain endpoints 
 
 1. `/login` get request to get the login form
 2. `/login` post request to the endpoint will return the token in the cookie with the home page, the token can then further be used for verify the authentication
