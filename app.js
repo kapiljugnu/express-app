@@ -17,7 +17,6 @@ app.get('/login', function (req, res) {
 });
 
 app.post('/login', function (req, res) {
-    console.log(req.body)
     if (!req.body.username || !req.body.password) {
         res.status("400");
         res.send("Invalid details!");
