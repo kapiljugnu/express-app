@@ -9,7 +9,9 @@ app
     .use(cookieParser())
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))
-    .use('/public', express.static('assets'));
+    .use('/public', express.static('assets'))
+    .use('/api', verifyAuth)
+    .listen(3000);
 
 
 app.get('/login', function (req, res) {
@@ -26,8 +28,6 @@ app.post('/login', function (req, res) {
     }
 });
 
-app.use('/api', verifyAuth);
-
 app.get('/api/todo', function (req, res) {
     res.send(['todo 1', 'todo 2'])
 });
@@ -35,5 +35,3 @@ app.get('/api/todo', function (req, res) {
 app.get('/api/task', function (req, res) {
     res.send(['task 1', 'task 2'])
 });
-
-app.listen(3000);
